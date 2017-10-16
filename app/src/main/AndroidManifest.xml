@@ -21,7 +21,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".sign_in"></activity>
+        <activity android:name=".sign_in" />
+        <activity android:name=".tabview"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" />
+
     </application>
 
 </manifest>

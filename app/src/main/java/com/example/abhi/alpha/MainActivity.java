@@ -2,7 +2,9 @@ package com.example.abhi.alpha;
 
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
@@ -16,18 +18,17 @@ public class MainActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_in);
 
-        //opens tabview when user login
-        signIn = (Button) findViewById(R.id.login);
-        signIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), tabview.class));
-            }
-        });
-
-
-
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        boolean previouslyStarted = prefs.getBoolean(getString(R.string.app_name), false);
+        if(!previouslyStarted) {
+            SharedPreferences.Editor edit = prefs.edit();
+            edit.putBoolean(getString(R.string.app_name), Boolean.TRUE);
+            edit.commit();
+            startActivity(new Intent(getApplicationContext(),sign_in.class));
+        }
+        else{
+            startActivity(new Intent(getApplicationContext(),tabview.class));
+        }
     }
 }

@@ -22,10 +22,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".sign_in" />
-        <activity android:name=".tabview"
+        <activity
+            android:name=".tabview"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
-
+        <activity android:name=".Field_List"></activity>
     </application>
 
 </manifest>

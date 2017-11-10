@@ -35,9 +35,7 @@ import java.util.HashMap;
 
 public class Tab1 extends Fragment {
 
-    FloatingActionMenu materialDesignFAM;
     Button sort_1, sort_2, sort_3, sort_4, sort_5;
-    FloatingActionButton floatingActionButton1, floatingActionButton2, floatingActionButton3;
     ArrayList<HashMap<String, String>> myValues;
     private ProgressDialog pDialog;
 
@@ -71,29 +69,7 @@ public class Tab1 extends Fragment {
         changeColor(sort_5, "#ef1ec5");*/
 
         //floating action menu with listeners
-        materialDesignFAM = (FloatingActionMenu) getView().findViewById(R.id.material_design_android_floating_action_menu);
-        floatingActionButton1 = (FloatingActionButton) getView().findViewById(R.id.material_design_floating_action_menu_item1);
-        floatingActionButton2 = (FloatingActionButton) getView().findViewById(R.id.material_design_floating_action_menu_item2);
-        floatingActionButton3 = (FloatingActionButton) getView().findViewById(R.id.material_design_floating_action_menu_item3);
 
-        floatingActionButton1.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                //TODO something when floating action menu first item clicked
-
-            }
-        });
-        floatingActionButton2.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                //TODO something when floating action menu second item clicked
-
-            }
-        });
-        floatingActionButton3.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                //TODO something when floating action menu third item clicked
-
-            }
-        });
 
 
     }

@@ -30,5 +30,6 @@ public class MainActivity extends AppCompatActivity{
         else{
             startActivity(new Intent(getApplicationContext(),tabview.class));
         }
+        MainActivity.this.finish();
     }
 }

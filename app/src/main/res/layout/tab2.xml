@@ -1,25 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical">
 
-        <!--includes student profile card and adds many standard layout
-        for news resume etc-->
-        <include android:id="@+id/student_profile"
-            layout="@layout/profile_card"/>
-        <include android:id="@+id/news"
-            layout="@layout/card_fields"/>
-        <include android:id="@+id/resume"
-            layout="@layout/card_fields"/>
-        <include android:id="@+id/lor"
-            layout="@layout/card_fields"/>
-        <include android:id="@+id/skills"
-            layout="@layout/card_fields"/>
-        <include android:id="@+id/universities"
-            layout="@layout/card_fields"/>
-    </LinearLayout>
-</android.support.v4.widget.NestedScrollView>
+    <include android:id="@+id/Forum_start_card"
+        layout="@layout/forum_starting_card"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/forum_recycler_view"
+        android:layout_margin="4dp">
+
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

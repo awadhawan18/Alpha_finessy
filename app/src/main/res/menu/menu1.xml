@@ -8,6 +8,15 @@
     </item>
 
     <item android:id="@+id/about"
-        android:title="About"/>
+        android:title="About Us"/>
+
+    <item android:id="@+id/Contact"
+        android:title="Contact Us"/>
+
+    <item android:id="@+id/Terms"
+        android:title="Terms Of use"/>
+
+    <item android:id="@+id/Privacy"
+        android:title="Privacy Policy"/>
 
 </menu>

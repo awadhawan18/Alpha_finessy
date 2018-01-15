@@ -20,7 +20,14 @@ public class sign_in extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(sign_in.this,tabview.class));
+                sign_in.this.finish();
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+        sign_in.this.finish();
     }
 }

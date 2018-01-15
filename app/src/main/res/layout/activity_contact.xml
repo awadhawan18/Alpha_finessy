@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.abhi.alpha.Contact"
+    android:background="#fff">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Contact1"
+            android:text="@string/contact_info1"
+            android:textColor="#000"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/query_mail"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/query_email"
+            android:layout_below="@id/Contact1"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Contact2"
+            android:text="@string/contact_info2"
+            android:layout_below="@id/query_mail"
+            android:textSize="16sp"
+            android:textColor="#000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/feedback_mail"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/feedback_mail"
+            android:layout_below="@id/Contact2"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Contact3"
+            android:text="@string/contact_info3"
+            android:layout_below="@id/feedback_mail"
+            android:textSize="16sp"
+            android:textColor="#000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ceo_mail"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/ceo_mail"
+            android:layout_below="@id/Contact3"
+            android:textSize="16sp"/>
+
+    </RelativeLayout>
+
+</ScrollView>

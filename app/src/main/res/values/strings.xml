@@ -19,4 +19,22 @@
     <string name="error_field_required">This field is required</string>
     <string name="permission_rationale">Contacts permissions are needed for providing email
         completions.</string>
+
+    <!-- Strings related to terms-->
+    <string name="about_us">Students are so tired of working alone in this tedious process of fulfillment of their study abroad dream. We have built a platform to help them out. Abroad Manager is the end to end solution to all their problems.\n\nOur mission is to help and encourage students to experience a wonderful journey to a foreign university they have always wanted to study at.\n\nWe want students from around the world to leave their comfort zone and step forward to a place that is unknown. The visit to this unknown place is an opportunity to GROW.\n\nWe have brought a platform that provides a personal space for all the discussions related to almost every degree, every program and every university. This personal space helps students to easily dive into specific discussions of their interests.\n\nOur platform is capable of solving problems related to:\n✓ Profile Evaluation\n✓ Career Counseling\n✓ Career Counseling\n✓ Application Process\n✓ Total Expenses Estimation\n✓ Financial Planning\n✓ Visa Process\n✓ House Bookings\n\nOur team at AbroadManager, work very hard to continuously improve the platform. We have the vision to become the best platform to help students for all study abroad problems around the world.\n\nIf you want to work with us, then visit our </string>
+    <string name="contact_info1">We are available 24/7 to give you support for all your queries. If you want to work with us or if you have any queries related to our platform, then write to us at: </string>
+    <string name="query_email">abroadmanagercompany@gmail.com</string>
+    <string name="contact_info2">\nWe would love to have your feedback on our services. It would be great to have your feedback delivered at:</string>
+    <string name="feedback_mail">feedback@abroadmanager.com</string>
+    <string name="contact_info3">\nIf you want to connect with the chief executive officer, then you can contact at:</string>
+    <string name="ceo_mail">ceo@abroadmanager.com</string>
+
+    <!-- Strings related to Forum-->
+    <string name="forum_start">Welcome To The General Discussion Space</string>
+    <string name="Ask_Question">Ask A Question: </string>
+    <string name="user_name">User Name</string>
+    <string name="time_posted">xx minutes ago</string>
+    <string name="posted_in">Posted In:</string>
+    <string name="dummy_question">The question comes here</string>
+
 </resources>

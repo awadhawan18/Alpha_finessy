@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.view.View;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 
@@ -25,10 +24,10 @@ public class MainActivity extends AppCompatActivity{
             SharedPreferences.Editor edit = prefs.edit();
             edit.putBoolean(getString(R.string.app_name), Boolean.TRUE);
             edit.commit();
-            startActivity(new Intent(getApplicationContext(),sign_in.class));
+            startActivity(new Intent(getApplicationContext(), SignIn.class));
         }
         else{
-            startActivity(new Intent(getApplicationContext(),tabview.class));
+            startActivity(new Intent(getApplicationContext(), Tabview.class));
         }
         MainActivity.this.finish();
     }

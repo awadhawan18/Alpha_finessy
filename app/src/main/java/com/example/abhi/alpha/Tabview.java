@@ -8,8 +8,13 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
-public class tabview extends AppCompatActivity {
+import com.github.clans.fab.FloatingActionButton;
+import com.github.clans.fab.FloatingActionMenu;
+
+public class Tabview extends AppCompatActivity {
 
     private TabLayout tabLayout;
     private ViewPager viewPager;
@@ -17,18 +22,20 @@ public class tabview extends AppCompatActivity {
     Tab2 profile;
     Tab3 notifications;
     Tab4 settings;
+    FloatingActionMenu materialDesignFAM;
+    FloatingActionButton floatingActionButton1, floatingActionButton2, floatingActionButton3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.app_bar_main);
-        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        viewPager = (ViewPager) findViewById(R.id.viewpager);
+        viewPager = findViewById(R.id.viewpager);
         viewPager.setOffscreenPageLimit(3);
 
         //Initializing the tablayout
-        tabLayout = (TabLayout) findViewById(R.id.tablayout);
+        tabLayout = findViewById(R.id.tablayout);
         tabLayout.setupWithViewPager(viewPager);
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -50,6 +57,31 @@ public class tabview extends AppCompatActivity {
         });
         setupViewPager(viewPager);
 
+        materialDesignFAM = findViewById(R.id.material_design_android_floating_action_menu);
+        floatingActionButton1 = findViewById(R.id.material_design_floating_action_menu_item1);
+        floatingActionButton2 = findViewById(R.id.material_design_floating_action_menu_item2);
+        floatingActionButton3 = findViewById(R.id.material_design_floating_action_menu_item3);
+
+        materialDesignFAM.bringToFront();
+        floatingActionButton1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //TODO something when floating action menu first item clicked
+
+            }
+        });
+        floatingActionButton2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //TODO something when floating action menu second item clicked
+
+            }
+        });
+        floatingActionButton3.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //TODO something when floating action menu third item clicked
+
+            }
+        });
+
     }
 
     @Override
@@ -65,15 +97,20 @@ public class tabview extends AppCompatActivity {
 
         switch (id){
 
-            case R.id.Sign_in: startActivity(new Intent(getApplicationContext(),sign_in.class));break;
+            case R.id.Sign_in:
+                startActivity(new Intent(getApplicationContext(), SignIn.class));
+                break;
 
             case R.id.about: startActivity(new Intent(getApplicationContext(),About.class));break;
 
             case R.id.Contact: startActivity(new Intent(getApplicationContext(),Contact.class));break;
 
-            case R.id.Terms: startActivity(new Intent(getApplicationContext(), Terms_Of_Use.class));break;
+            case R.id.Terms:
+                startActivity(new Intent(getApplicationContext(), TermsOfUse.class));
+                break;
 
-            case R.id.Privacy: startActivity(new Intent(getApplicationContext(), Privacy_Policy.class));
+            case R.id.Privacy:
+                startActivity(new Intent(getApplicationContext(), PrivacyPolicy.class));
         }
 
         return super.onOptionsItemSelected(item);
@@ -96,6 +133,6 @@ public class tabview extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         //super.onBackPressed();
-        tabview.this.finish();
+        Tabview.this.finish();
     }
 }

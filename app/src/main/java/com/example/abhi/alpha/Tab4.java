@@ -27,14 +27,14 @@ public class Tab4 extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        CardView cardView = (CardView)getView().findViewById(R.id.course);
-        TextView tv = (TextView)cardView.findViewById(R.id.field_name);
+        CardView cardView = getView().findViewById(R.id.course);
+        TextView tv = cardView.findViewById(R.id.field_name);
         tv.setText("Course");
 
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity().getApplication(),Field_List.class));
+                startActivity(new Intent(getActivity().getApplication(), FieldList.class));
             }
         });
     }

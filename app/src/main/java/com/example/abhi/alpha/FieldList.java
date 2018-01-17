@@ -3,7 +3,7 @@ package com.example.abhi.alpha;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class Field_List extends AppCompatActivity {
+public class FieldList extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

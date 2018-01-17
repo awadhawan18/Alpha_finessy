@@ -4,7 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class Privacy_Policy extends AppCompatActivity {
+public class PrivacyPolicy extends AppCompatActivity {
 
     TextView t;
     String s;
@@ -15,7 +15,7 @@ public class Privacy_Policy extends AppCompatActivity {
         setContentView(R.layout.activity_privacy__policy);
         setTitle("Privacy Policy");
 
-        t = (TextView) findViewById(R.id.privacy_text);
+        t = findViewById(R.id.privacy_text);
 
         s = "Privacy Policy\n" +
                 "We, at 'Finessy' (Owner of Abroad Manager website and its services), are committed to respecting your online privacy and recognize your need for appropriate protection and management of any personally identifiable information (\"Personal Information\") you share with us.\n" +

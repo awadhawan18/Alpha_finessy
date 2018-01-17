@@ -1,5 +1,28 @@
 <resources>
     <string name="app_name">Alpha</string>
+    <!--strings for intro slides -->
+    <string name="title_activity_xperiences_list">xperiences_list</string>
+    <string name="title_activity_xperience_details">Xperience Details</string>
+
+    <string name="slide_1_title">Welcome to Abroad Manager</string>
+    <string name="slide_1_desc">A Unique And Personalized Study Abroad Platform With International Community</string>
+
+    <string name="slide_2_title">For Free, You Can:</string>
+    <string name="slide_2_desc">Evaluate Your Profile\nShortlist Universities\nAsk Queries\nAsk Application Process\nAsk Total Expenses </string>
+
+    <string name="slide_3_title">Get Your Documents Ready With The Help Of Best Professionals Around The World</string>
+    <string name="slide_3_desc">Statement Of Purpose\nLetter Of Recommendation\nResume\nOthers </string>
+
+    <string name="slide_4_title">Short On Cash ?\nGet Help With Finance Management</string>
+    <string name="slide_4_desc"></string>
+    <string name="slide_5_title">Live Your Study Abroad Dream With Your Effort And Our Support</string>
+    <string name="slide_5_desc"></string>
+
+    <string name="next">Next</string>
+    <string name="skip">Skip</string>
+
+    <string name="my_preference">"com.finessy.MyPref"</string>
+    <string name="my_preference_key">"com.finessy.MyPrefKey"</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

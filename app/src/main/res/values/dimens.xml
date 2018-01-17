@@ -13,4 +13,9 @@
     <dimen name="standard_155">180dp</dimen>
     <dimen name="sort_buttons">30dp</dimen>
     <dimen name="standard_text_size">16sp</dimen>
+    <dimen name="intro_slide_bottom_margin">130dp</dimen>
+    <dimen name="intro_slide_padding_left">30dp</dimen>
+
+    <dimen name="intro_slide_title_size">25sp</dimen>
+    <dimen name="intro_slide_desc_size">20sp</dimen>
 </resources>

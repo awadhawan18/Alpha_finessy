@@ -4,7 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class Terms_Of_Use extends AppCompatActivity {
+public class TermsOfUse extends AppCompatActivity {
 
     TextView t;
     String s;
@@ -15,7 +15,7 @@ public class Terms_Of_Use extends AppCompatActivity {
         setContentView(R.layout.activity_terms__of__use);
         setTitle("Terms Of Use");
 
-        t = (TextView) findViewById(R.id.terms_text);
+        t = findViewById(R.id.terms_text);
 
         s = "Terms of use\n" +
                 "•\tOn registration you agree to be contacted by Finessy (owning company of abroadmanager.com and all its services)\n" +

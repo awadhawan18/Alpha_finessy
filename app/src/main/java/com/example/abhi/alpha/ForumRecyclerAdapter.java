@@ -10,7 +10,7 @@ import android.view.ViewGroup;
  * Created by Nikhil on 30-12-2017.
  */
 
-public class Forum_RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
+public class ForumRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -28,7 +28,7 @@ public class Forum_RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.Vie
         return 0;
     }
 
-    public Forum_RecyclerAdapter() {
+    public ForumRecyclerAdapter() {
     }
 
     class ViewHolder extends RecyclerView.ViewHolder{

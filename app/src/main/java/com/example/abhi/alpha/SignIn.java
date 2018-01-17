@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-public class sign_in extends AppCompatActivity {
+public class SignIn extends AppCompatActivity {
 
     Button login;
 
@@ -15,12 +15,12 @@ public class sign_in extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
-        login = (Button) findViewById(R.id.login);
+        login = findViewById(R.id.login);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(sign_in.this,tabview.class));
-                sign_in.this.finish();
+                startActivity(new Intent(SignIn.this, Tabview.class));
+                SignIn.this.finish();
             }
         });
     }
@@ -28,6 +28,6 @@ public class sign_in extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         //super.onBackPressed();
-        sign_in.this.finish();
+        SignIn.this.finish();
     }
 }

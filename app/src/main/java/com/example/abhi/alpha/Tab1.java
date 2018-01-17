@@ -8,7 +8,6 @@ import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -22,8 +21,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.github.clans.fab.FloatingActionButton;
-import com.github.clans.fab.FloatingActionMenu;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -35,11 +37,11 @@ import java.util.HashMap;
 
 public class Tab1 extends Fragment {
 
-    FloatingActionMenu materialDesignFAM;
-    Button sort_1, sort_2, sort_3, sort_4, sort_5;
-    FloatingActionButton floatingActionButton1, floatingActionButton2, floatingActionButton3;
     ArrayList<HashMap<String, String>> myValues;
+    private String URL = "https://gist.githubusercontent.com/awadhawan18/54592d9ec5e7be1b39013cdd7e78dae4/raw/54a90fe99b8e821e273e1997f356d04308bdb232/Random-images.json";
     private ProgressDialog pDialog;
+    Button sort_1, sort_2, sort_3, sort_4, sort_5;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -53,7 +55,7 @@ public class Tab1 extends Fragment {
         //gets the json data from gist and passes it to recycle view adapter
         myValues = new ArrayList<>();
         if (isNetworkOnline()) {
-            new Tab1.getJsonData().execute();
+            getJsonData();
         } else {
             alertDialog();
         }
@@ -71,90 +73,65 @@ public class Tab1 extends Fragment {
         changeColor(sort_5, "#ef1ec5");*/
 
         //floating action menu with listeners
-        materialDesignFAM = (FloatingActionMenu) getView().findViewById(R.id.material_design_android_floating_action_menu);
-        floatingActionButton1 = (FloatingActionButton) getView().findViewById(R.id.material_design_floating_action_menu_item1);
-        floatingActionButton2 = (FloatingActionButton) getView().findViewById(R.id.material_design_floating_action_menu_item2);
-        floatingActionButton3 = (FloatingActionButton) getView().findViewById(R.id.material_design_floating_action_menu_item3);
 
-        floatingActionButton1.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                //TODO something when floating action menu first item clicked
-
-            }
-        });
-        floatingActionButton2.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                //TODO something when floating action menu second item clicked
-
-            }
-        });
-        floatingActionButton3.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                //TODO something when floating action menu third item clicked
-
-            }
-        });
 
 
     }
 
     //gets the json file from github gist using HttpHandle and converts in into json
-    //populated by recycle view adapter
-    public class getJsonData extends AsyncTask<Void, Void, Void> {
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            pDialog = new ProgressDialog(getContext());
-            pDialog.setMessage("Please wait...");
-            pDialog.setCancelable(false);
-            pDialog.show();
-        }
+    //populated by recycler view adapter
+    public void getJsonData() {
+        pDialog = new ProgressDialog(getContext());
+        pDialog.setMessage("Please wait...");
+        pDialog.setCancelable(false);
+        pDialog.show();
 
-        @Override
-        protected Void doInBackground(Void... params) {
+        RequestQueue queue = MySingleton.getInstance(getContext()).
+                getRequestQueue();
+        JsonObjectRequest jsObjRequest = new JsonObjectRequest
+                (Request.Method.GET, URL, null, new Response.Listener<JSONObject>() {
 
-            HttpHandler sh = new HttpHandler();
-            String url = "https://gist.githubusercontent.com/awadhawan18/54592d9ec5e7be1b39013cdd7e78dae4/raw/54a90fe99b8e821e273e1997f356d04308bdb232/Random-images.json";
-            String jsonData = sh.makeServiceCall(url);
-            Log.e(MainActivity.class.getSimpleName(), "Response from url: " + jsonData);
-            if (jsonData != null) {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            JSONObject jsonObj = new JSONObject(String.valueOf(response));
+                            JSONArray cards = jsonObj.getJSONArray("sample");
+                            for (int i = 0; i < cards.length(); i++) {
+                                JSONObject c = cards.getJSONObject(i);
+                                String description = c.getString("description");
+                                String image_url = c.getString("image-url");
+                                HashMap<String, String> samples = new HashMap<>();
+                                samples.put("description", description);
+                                samples.put("image-url", image_url);
+                                myValues.add(samples);
+                            }
 
-                try {
-                    JSONObject jsonObj = new JSONObject(jsonData);
-                    JSONArray cards = jsonObj.getJSONArray("sample");
-                    for (int i = 0; i < cards.length(); i++) {
-                        JSONObject c = cards.getJSONObject(i);
-                        String description = c.getString("description");
-                        String image_url = c.getString("image-url");
-                        HashMap<String, String> samples = new HashMap<>();
-                        samples.put("description", description);
-                        samples.put("image-url", image_url);
-                        myValues.add(samples);
+
+                        } catch (final JSONException e) {
+
+                        } finally {
+                            if (pDialog.isShowing())
+                                pDialog.dismiss();
+                            RecyclerViewAdapter adapter = new RecyclerViewAdapter(getContext(), myValues);
+                            RecyclerView myView = getView().findViewById(R.id.recyclerview);
+                            myView.setHasFixedSize(true);
+                            myView.setAdapter(adapter);
+                            LinearLayoutManager llm = new LinearLayoutManager(getContext());
+                            llm.setOrientation(LinearLayoutManager.VERTICAL);
+                            myView.setLayoutManager(llm);
+                        }
                     }
-                } catch (final JSONException e) {
+                }, new Response.ErrorListener() {
 
-                }
-            } else {
-                Toast.makeText(getContext(), "Couldn't get Json Data", Toast.LENGTH_SHORT).show();
-            }
-            return null;
-        }
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.v("Error main_activity", error.toString());
+                        Toast.makeText(getContext(), "Sorry Couldn't fetch data", Toast.LENGTH_SHORT).show();
 
-        @Override
-        protected void onPostExecute(Void aVoid) {
-            super.onPostExecute(aVoid);
-            if (pDialog.isShowing())
-                pDialog.dismiss();
-            RecyclerViewAdapter adapter = new RecyclerViewAdapter(getContext(), myValues);
-            RecyclerView myView = (RecyclerView) getView().findViewById(R.id.recyclerview);
-            myView.setHasFixedSize(true);
-            myView.setAdapter(adapter);
-            LinearLayoutManager llm = new LinearLayoutManager(getContext());
-            llm.setOrientation(LinearLayoutManager.VERTICAL);
-            myView.setLayoutManager(llm);
+                    }
+                });
+        queue.add(jsObjRequest);
 
-
-        }
     }
 
     //checks network connection
@@ -190,7 +167,7 @@ public class Tab1 extends Fragment {
                             @Override
                             public void onClick(DialogInterface dialog, int id) {
                                 if (isNetworkOnline()) {
-                                    new Tab1.getJsonData().execute();
+                                    getJsonData();
                                 } else alertDialog();
                             }
                         });

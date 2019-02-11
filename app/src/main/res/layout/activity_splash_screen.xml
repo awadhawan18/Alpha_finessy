@@ -16,19 +16,19 @@
         android:layout_gravity="center_horizontal"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
-        android:foreground="#ffffff" />
+        android:foreground="#0773A6" />
 
     <ImageView
         android:id="@+id/appLogo"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_gravity="center_horizontal"
         android:scaleType="fitCenter"
         android:src="@drawable/app_logo" />
 
-    <TextView
+    <!--<TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text=""
@@ -38,6 +38,6 @@
         android:layout_below="@id/appLogo"
         android:layout_marginTop="12sp"
         android:layout_marginRight="40sp"
-        android:layout_marginLeft="40sp" />
+        android:layout_marginLeft="40sp" />-->
 
 </RelativeLayout>

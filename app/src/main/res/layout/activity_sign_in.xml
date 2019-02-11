@@ -1,32 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:background="#fff">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
-
-
-        <ImageView
-            android:id="@+id/login_logo"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_centerHorizontal="true"
-            android:src="@android:drawable/presence_away"
-            android:layout_marginTop="30dp"/>
 
         <android.support.design.widget.TextInputLayout
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:id="@+id/email"
-            android:layout_below="@id/login_logo">
+            android:id="@+id/email">
 
             <EditText
                 android:layout_width="match_parent"
@@ -39,7 +26,6 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:layout_below="@id/login_logo"
                 />
 
         </android.support.design.widget.TextInputLayout>
@@ -49,15 +35,13 @@
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/password"
-            android:layout_below="@id/email">
+            android:id="@+id/password">
 
             <EditText
                 android:id="@+id/edit_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Password"
-                android:imeActionId="@+id/login"
                 android:imeActionLabel="@string/action_sign_in_short"
                 android:imeOptions="actionUnspecified"
                 android:inputType="textPassword"
@@ -73,11 +57,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="end"
             android:id="@+id/Forget_password"
             android:text="Forgot Password?"
-            android:layout_below="@id/password"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="10dp"
+            android:layout_marginEnd="10dp"
             android:textColor="@color/colorAccent"
             android:textSize="16sp"
             android:clickable="true"/>
@@ -90,38 +73,37 @@
             android:background="@color/colorPrimary"
             android:textColor="#fff"
             android:textStyle="bold"
-            android:layout_below="@id/password"
             android:layout_marginTop="25dp"
             android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_weight="1"/>
-
-        <TextView
-            android:text="Don't have an Account?"
+            android:layout_marginRight="20dp" />
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.1"
-            android:id="@+id/textView2"
-            android:layout_centerHorizontal="true"
-            android:gravity="center"
-            android:textColor="#000"
-            android:textSize="16sp"
-            android:layout_below="@id/login"
-            android:layout_marginTop="20dp"/>
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sign Up"
-            android:textSize="16sp"
-            android:id="@+id/signup"
-            android:layout_toRightOf="@id/textView2"
-            android:layout_below="@id/login"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
-            android:textColor="@color/colorAccent"
-            android:textStyle="bold"
-            android:clickable="true"/>
+            <TextView
+                android:text="Don't have an Account?"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView2"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textColor="#000"
+                android:textSize="16sp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="  Sign Up"
+                android:textSize="16sp"
+                android:id="@+id/signup"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold"
+                android:clickable="true"/>
+        </LinearLayout>
 
         <Button
             android:layout_width="match_parent"
@@ -131,7 +113,6 @@
             android:textAllCaps="false"
             android:drawableLeft="@drawable/google2_1"
             android:padding="16dp"
-            android:layout_below="@id/textView2"
             android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
@@ -146,7 +127,6 @@
             android:paddingLeft="5dp"
             android:textAllCaps="false"
             android:id="@+id/login_fb"
-            android:layout_below="@id/login_google"
             android:background="#3b5998"
             android:drawableLeft="@drawable/fb3"
             android:text="Connect With Facebook"
@@ -159,11 +139,10 @@
             android:paddingLeft="10dp"
             android:textAllCaps="false"
             android:id="@+id/login_linkedin"
-            android:layout_below="@id/login_fb"
             android:background="#0077B5"
             android:drawableLeft="@drawable/link"
             android:text="Connect With Linkedin"
             android:textColor="#fff" />
 
-    </RelativeLayout>
+    </LinearLayout>
 </ScrollView>

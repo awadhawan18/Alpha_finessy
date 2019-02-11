@@ -55,7 +55,7 @@ public class Tab1 extends Fragment {
         //gets the json data from gist and passes it to recycle view adapter
         myValues = new ArrayList<>();
         if (isNetworkOnline()) {
-            getJsonData();
+            //getJsonData();
         } else {
             alertDialog();
         }
@@ -167,7 +167,7 @@ public class Tab1 extends Fragment {
                             @Override
                             public void onClick(DialogInterface dialog, int id) {
                                 if (isNetworkOnline()) {
-                                    getJsonData();
+                                   // getJsonData();
                                 } else alertDialog();
                             }
                         });

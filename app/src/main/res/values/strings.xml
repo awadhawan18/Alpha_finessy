@@ -56,6 +56,7 @@
     <string name="forum_start">Welcome To The General Discussion Space</string>
     <string name="Ask_Question">Ask A Question: </string>
     <string name="user_name">User Name</string>
+    <string name="group_name">Group Name</string>
     <string name="time_posted">xx minutes ago</string>
     <string name="posted_in">Posted In:</string>
     <string name="dummy_question">The question comes here</string>

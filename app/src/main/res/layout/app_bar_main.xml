@@ -79,7 +79,7 @@
             android:src="@drawable/fab_add"
             app:fab_colorNormal="@color/colorPrimary"
             app:fab_colorPressed="@color/colorPrimaryDark"
-            fab:fab_label="Add"
+            fab:fab_label="My Documents"
             fab:fab_size="mini" />
 
         <com.github.clans.fab.FloatingActionButton
@@ -89,7 +89,7 @@
             android:src="@android:drawable/ic_menu_delete"
             app:fab_colorNormal="@color/colorPrimary"
             app:fab_colorPressed="@color/colorPrimaryDark"
-            fab:fab_label="Delete"
+            fab:fab_label="Finance Management"
             fab:fab_size="mini" />
 
         <com.github.clans.fab.FloatingActionButton
@@ -99,7 +99,7 @@
             android:src="@android:drawable/ic_dialog_info"
             app:fab_colorNormal="@color/colorPrimary"
             app:fab_colorPressed="@color/colorPrimaryDark"
-            fab:fab_label="Info"
+            fab:fab_label="My Interests"
             fab:fab_size="mini" />
     </com.github.clans.fab.FloatingActionMenu>
 
